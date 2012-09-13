@@ -8,13 +8,13 @@ gem 'omniauth-twitter'
 gem 'github_api'
 gem "awesome_print"
 gem 'twitter'
+gem 'thin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
   gem 'sqlite3'
-  gem 'thin'
 end
 
 group :production do
