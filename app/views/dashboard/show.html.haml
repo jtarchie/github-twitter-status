@@ -1,15 +1,16 @@
-- if flash[:authorized_with]
-  .alert.alert-success
-    Successfully authorized with
-    = "#{flash[:authorized_with].capitalize}."
+.page-header
+  %h1
+    devstats
+    %small OMG LOC R ASOME!!!
 
-.hero-unit
-  %h1 Authorize Accounts
-  %p Please authorize yourself with the following accounts, so we can collect and post awesome stats.
-  %p
-    = link_to "Github", "/auth/github", class: "btn btn-primary btn-large"
-    = link_to "Twitter", "/auth/twitter", class: "btn btn-primary btn-large"
-  %p
-    %strong Example status message:
-  %p
-    I have 23 commits over 5 repos this past week.
+- if flash[:authorized_with]
+  %p.alert.alert-success
+    Successfully authorized with
+    %strong= "#{flash[:authorized_with].capitalize}."
+
+= render 'authorize_accounts', :user => @user
+
+%p
+  %strong Example status message:
+%p
+  I have 23 commits over 5 repos this past week.
