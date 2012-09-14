@@ -1,6 +1,8 @@
 require 'spec_helper'
 
 describe DashboardController do
+  before { User.stub(:find_by_id) }
+
   context "GET#index" do
     it "renders successfully" do
       get :show
